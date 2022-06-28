@@ -128,9 +128,9 @@
               <h5>Виды лома</h5>
 
                  <v-autocomplete
-            ref="lom_"
-            v-model="lom_"
-            :items="lom"
+            ref="name"
+            
+            :items="JSON.stringify(lom)"
             label="Выбор лома"
             placeholder="Вид..."
             required
@@ -160,9 +160,9 @@
               <h5>Виды лома</h5>
 
           <v-autocomplete
-            ref="lom_"
-            v-model="lom_"
-            :items="lom"
+            ref="name"
+            
+            :items="JSON.stringify(lom)"
             label="Выбор лома"
             placeholder="Вид..."
             required
@@ -336,7 +336,9 @@
         pageCount: 0,
         itemsPerPage: 10,
         search: '',
-        lom: ['5а', '7а', '3в', '4в','6н','2в','9р','12м','14в','17б','9д','3а',],
+        lom: [],
+        arr: ['name'],
+        cargoType: [],
         transport: [],
         headers: [
           {
@@ -378,8 +380,9 @@
       }
     },
       created() {
-      this.load()
+      this.load();
       // this.getOne()
+      this.loadCargoType()
       },
       methods: {
       async load(){
@@ -389,7 +392,18 @@
       this.transportNumber = result.data;
       console.log(this.transportNumber);*/
       },
+
+      async loadCargoType(){
+      // new td = new Transport()
+      axios.get(`${server.baseURL}/compliet-cargo/cargoType`).then(data => (this.lom = data.data))
+     /* const result = await axios.get(`${server.baseURL}/compliet-cargo/cargoType`);
+     
+      this.cargoType = result.data;
+      console.log(this.cargoType);*/
+
+
       }
+    }
   }
 </script>
 
