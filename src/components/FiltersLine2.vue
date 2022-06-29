@@ -14,10 +14,10 @@
 
 <script>
 export default {
-  name: 'FiltersLine2',
+  name: 'FiltersLine',
   data: () => ({
     items: [
-      { label: 'Вес 44.6', value: '44.6', field: 'Вес' },
+      { label: 'Поставщик Лен-Инвест', value: 'Лен-Инвест', field: 'Поставщик' },
       { label: 'Все ТСы с кодом 34554', value: '34554', field: 'transport' }
     ]
   })

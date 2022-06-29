@@ -19,20 +19,20 @@
       </v-list> 
     </v-navigation-drawer>
     <v-app-bar app class="white" dense dark>
-      <v-btn icon color="grey darken-1">
+       <v-btn icon color="grey darken-1">
         <v-icon  >mdi-menu</v-icon>
-      </v-btn>
+      </v-btn> 
       <AppSearch />
       <v-spacer></v-spacer>  
       <v-toolbar-items> 
         <v-row>
-        <v-btn
+      <!--  <v-btn
           class="rectangle"
           text
           icon
           color="grey darken-1">
           <v-icon>insert_drive_file</v-icon>
-        </v-btn>
+        </v-btn> -->
         <v-avatar class="avatar" >
         <img
           alt="John"
@@ -44,9 +44,10 @@
     <v-main>
       <v-content>     
         <v-container fluid>
+          <Authentication />
           <AppTable2 />
           <!-- <AppDialog /> -->
-          <Authentication />
+
           <!-- <v-spacer></v-spacer>-->
           <!-- <h4>Фильтр</h4>-->
           <!-- <input type="search" v-model="search" class="search" placeholder="поиск..."/>-->
@@ -122,7 +123,6 @@ export default {
 
 
 <style lang="scss">
-
 .SGMK_logo {
 margin-top: 13px;
 margin-left: 15px;
@@ -135,6 +135,5 @@ margin-left: 15px;
 .grey darken-1 {
    margin-top: 10px;
 }
-
 
 </style>
