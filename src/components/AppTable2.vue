@@ -125,28 +125,20 @@
                 md="8"
               >
               <h5>Виды лома</h5>
-<<<<<<< HEAD
+
 
                  <v-autocomplete
             ref="name"
             
-            :items="JSON.stringify(lom)"
+            :items="lom"
+            item-text="name"
+            item-value="name"
             label="Выбор лома"
             placeholder="Вид..."
             required
             clearable
           ></v-autocomplete>
-=======
-                <v-autocomplete
-                  ref="lom_"
-                  v-model="lom_"
-                  :items="lom"
-                  label="Выбор лома"
-                  placeholder="Вид..."
-                  required
-                  clearable
-                ></v-autocomplete>
->>>>>>> 50c2f6251283c642af70354ecd227412e989956b
+
            </v-col>
            <v-col
                 cols="12"
@@ -171,12 +163,14 @@
           <v-autocomplete
             ref="name"
             
-            :items="JSON.stringify(lom)"
+            :items="lom"
+            item-text="name"
+            item-value="name"
             label="Выбор лома"
             placeholder="Вид..."
             required
             clearable
-          ></v-autocomplete>
+          >{{lom.name}}</v-autocomplete>
            </v-col>
            <v-col
                 cols="12"
@@ -367,19 +361,21 @@
       }
     },
       created() {
-<<<<<<< HEAD
+
       this.load();
-      // this.getOne()
+      
       this.loadCargoType()
-=======
-      this.load()
->>>>>>> 50c2f6251283c642af70354ecd227412e989956b
+
+
       },
       methods: {
       async load(){
       axios.get(`${server.baseURL}/compliet-cargo/TS`).then(data => (this.transport = data.data))
       },
-<<<<<<< HEAD
+
+
+
+
 
       async loadCargoType(){
       // new td = new Transport()
@@ -391,8 +387,7 @@
 
 
       }
-=======
->>>>>>> 50c2f6251283c642af70354ecd227412e989956b
+
     }
   }
 </script>
